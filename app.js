@@ -1,10 +1,16 @@
 const container = document.querySelector('.container');
+const resetButton = document.querySelector('.reset-button');
 
 let sizeOfGrid = 16;
-let brushColor = 'black'
+let brushColor = 'black';
 
 const createGrid = (amtOfGrids) => {
-    for (i = 0; i < amtOfGrids; i++) {
+    if (amtOfGrids === 0) {
+        while (container.firstChild !== null) {
+            container.firstChild.remove();
+        }
+    } 
+    else for (i = 0; i < amtOfGrids; i++) {
         const row = document.createElement('div');
         row.classList.add('grid-row');
 
@@ -26,4 +32,16 @@ const createGrid = (amtOfGrids) => {
 }
 
 createGrid(sizeOfGrid);
+
+resetButton.addEventListener("click", () => {
+    createGrid(0);
+    let userSize = prompt('What dimensions do you want for the new grid?');
+    if (userSize > 100) {
+        alert("Cannot be more than 100!")
+    }
+    sizeOfGrid = userSize;
+    createGrid(userSize);
+})
+
+
 
