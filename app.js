@@ -40,7 +40,7 @@ resetButton.addEventListener("click", () => {
         alert("Cannot be more than 100!")
     }
     sizeOfGrid = userSize;
-    createGrid(userSize);
+    createGrid(sizeOfGrid);
 })
 
 
