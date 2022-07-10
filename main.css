@@ -1,0 +1,14 @@
+.container {
+    background-color: beige;
+    width: 700px;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.grid-box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
